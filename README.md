@@ -146,3 +146,26 @@ function ApiScripts() {
 }
 
 export default ApiScripts;
+
+response:
+
+{
+    "meta": {
+        "timestamp": "2022-12-30T11:11:02Z",
+        "cxpCorrelationId": "2022-12-30T16:41:02.+0530:17b6fe3990f9b6cc:VIN0019ALKKWEUE:payload:local"
+    },
+    "data": {
+        "scriptExecutorResponse": [
+            {
+                "querNo": 1,
+                "status": "SUCESS",
+                "affectedRows": 1
+            },
+            {
+                "querNo": 1,
+                "status": "FAILURE",
+                "affectedRows": 0
+            }
+        ]
+    }
+}
