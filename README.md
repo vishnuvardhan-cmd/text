@@ -169,3 +169,40 @@ response:
         ]
     }
 }
+
+import React, { useEffect } from 'react';
+import { Table } from 'react-bootstrap/Table';
+import { useLocation } from 'react-router-dom';
+import { dataSyncApi } from '../../service';
+
+function ViewScripts() {
+    const location = useLocation();
+    // useEffect(() => console.log(location.state.data))
+    const data=JSON.parse(location.state.data);
+    return (
+        <Table striped bordered hover>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>QueryNo</th>
+                    <th>Status</th>
+                    <th>AffectedRows</th>
+                </tr>
+            </thead>
+            <tbody>
+                {
+                    data.map((ele,i) => {
+                        return (
+                            <tr>
+                                <td>{data.scriptExecutorResponse[i].queryNo}</td>
+                                <td>{data.scriptExecutorResponse[i].status}</td>
+                                <td>{data.scriptExecutorResponse[i].affectedRows}</td>
+                            </tr>
+                        )
+                    })}
+            </tbody>
+        </Table>
+    );
+}
+
+export default ViewScripts;
